@@ -1,36 +1,47 @@
+# 8.15 Encoding Color Histograms as Features
+# When you want to create a set of features representing the colors appearing in an image.
+# Compute the histograms for each color channel:
+# Load libraries
 import cv2
 import numpy as np
-from matplotlib import pyplot as plt
+import matplotlib.pyplot as plt
 
-# Load image as grayscale
-image = cv2. imread("simulated_datasets-master/images/plane_256x256.jpg", cv2.IMREAD_GRAYSCALE)
+# Load image
+image_bgr = cv2.imread("simulated_datasets-master/images/plane_256x256.jpg", cv2.IMREAD_COLOR)
 
-# Blur image
-image_blurry = cv2.blur(image, (5, 5))
+# Convert to RGB
+image_rgb = cv2.cvtColor(image_bgr, cv2.COLOR_BGR2RGB)
 
-# Show image
-plt.imshow(image_blurry, cmap = "gray"), plt.axis("off")
-plt.show()
+# Create a list for feature values
+features = []
 
+# Calculate the histogram for each color channel
+colors = ("r", "g", "b")
 
-image_very_blurry = cv2.blur(image, (100, 100))
+# For each channel: calculate histogram and add to feature value list
+for i, channel in enumerate(colors):
+    histogram = cv2.calcHist([image_rgb], # Image
+                             [i], # Index of channel
+                             None, # No mask
+                             [256], # Histogram size
+                             [0, 256]) # Range
+    features.extend(histogram)
 
-# Show image
-plt.imshow(image_very_blurry, cmap = "gray"), plt.axis("off")
-plt.show()
+# Create a vector for an observation's feature values
+observation = np.array(features).flatten()
 
-kernel = np.ones((5, 5)) / 25.0
+# Shoow the observation's value for the first five features
+colors = ("r", "g", "b")
 
-# Show kernel
-print(kernel)
+# For each channel: calculate histogram, make plot
+for i, channel in enumerate(colors):
+    histogram = cv2.calcHist([image_rgb], # Image
+                             [i], # Index of channel
+                             None, # No mask
+                             [256], # Histogram size
+                             [0, 256]) # Range
+    plt.plot(histogram, color = channel)
+    plt.xlim([0, 256])
 
-# The center element in the kernel is the pixel being examined, while the remaining elements are its neighbors. Since
-# all elements have the same value (normalized to add up to 1), each has an equal say in the resulting value of the 
-# pixel of interest. We can manually apply a kernel to an image using 'filter2D' to produce a similar blurring 
-# effect:
-# Apply kernel
-image_kernel = cv2.filter2D(image, -1, kernel)
-
-# Show image
-plt.imshow(image_kernel, cmap = "gray"), plt.axis("off")
+# Show plot
 plt.show()
