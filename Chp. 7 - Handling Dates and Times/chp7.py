@@ -1,4 +1,5 @@
 # Chapter 7 - Handling Dates and Times
+# Adapted from the book: Machine Learning with Python Cookbook by Chris Albon
 # 7.0 Introduction
 """
 Dates and times (datetimes) are frequently encountered during preprocessing for machine learning, whether the time of 

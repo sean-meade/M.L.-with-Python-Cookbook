@@ -1,3 +1,4 @@
+# Adapted from the book: Machine Learning with Python Cookbook by Chris Albon
 # Chapter 4 - Handling Numerical Data
 # Quantitive data is the measurement of something - whether class size, monthly sales, or student scores. The 
 # natural wat to represent these quantities is numerically (e.g., 29 students, $529,392 in sales). In this chapter,

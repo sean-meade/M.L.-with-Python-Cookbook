@@ -1,5 +1,5 @@
 # The #==> symbol shows the output of the code beside it or above it
-
+# Adapted from the book: Machine Learning with Python Cookbook by Chris Albon
 # Creating a Vector & a Matrix
 
 import numpy as np 

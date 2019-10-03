@@ -1,4 +1,5 @@
 # Chapter 6 - Handling Text
+# Adapted from the book: Machine Learning with Python Cookbook by Chris Albon
 # 6.0 Introduction
 """
 Unstructured text data, like the contents of a book or a tweet, is both one of the most interesting sources of 

@@ -1,5 +1,5 @@
 # Chapter 5 - Handling Categorical Data
-
+# Adapted from the book: Machine Learning with Python Cookbook by Chris Albon
 # 5.0 Introduction
 # It is often useful to measure objects not in terms of quantity but in terms of some quality. We frequently 
 # represent this qualitative information as an observation's membership in a discrete category such as gender, 

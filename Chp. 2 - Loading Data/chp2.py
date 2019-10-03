@@ -1,3 +1,4 @@
+# Adapted from the book: Machine Learning with Python Cookbook by Chris Albon
 # Loading a Sample Dataset
 # Load scikit-learn's datasets
 from sklearn import datasets

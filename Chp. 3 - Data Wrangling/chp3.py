@@ -1,5 +1,5 @@
 # Data Wrangling
-
+# Adapted from the book: Machine Learning with Python Cookbook by Chris Albon
 # 3.0 Introduction
 # Example of wrangled data in the form of a a data frame (tabular)
 

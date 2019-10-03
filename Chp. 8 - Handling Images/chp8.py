@@ -1,4 +1,5 @@
 # Chapter 8 - Handling Images
+# Adapted from the book: Machine Learning with Python Cookbook by Chris Albon
 # 8.0 Introduction
 """
 Image classification is one of the most exciting areas of machine learning. The ability of computers to recognize 
